@@ -11,9 +11,3 @@ O repositório está organizado em subdiretórios, cada um contendo seus própri
 * **`/Aulas`**: Códigos avulsos, scripts secundários e materiais desenvolvidos durante as aulas teóricas e práticas em geral.
 * **`/Lab_Python_ENEM`**: Laboratório prático focado em Engenharia de Dados. Contém um pipeline de ETL completo que extrai, transforma e analisa os microdados do ENEM 2023. *(Consulte o arquivo `README.md` dentro desta pasta para instruções específicas de execução e arquitetura).*
 
-## 🚀 Como utilizar
-
-Para baixar todo o conteúdo deste repositório para a sua máquina, execute o seguinte comando no seu terminal:
-
-```bash
-git clone [https://github.com/CassianoMC/DevOps-Course.git](https://github.com/CassianoMC/DevOps-Course.git)
