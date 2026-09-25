@@ -39,7 +39,7 @@ O pipeline de dados cria automaticamente os seguintes gráficos a partir das agr
 - **Python 3.x**
 - **Pandas:** Leitura massiva, limpeza, aplicação de regras de negócio e manipulação em memória.
 - **SQLAlchemy & SQLite:** Motor de banco de dados relacional e armazenamento seguro da modelagem dimensional.
-- **Matplotlib & Seaborn:** Estilização corporativa e renderização de dados visuais.
+- **Matplotlib & Seaborn:** Estilização e renderização de dados visuais.
 
 ## 🚀 Como Executar o Projeto
 
