@@ -1,0 +1,72 @@
+import sqlite3
+
+# Conectar (ou criar) o banco de dados
+conn = sqlite3.connect('minhaloja.db')
+cursor = conn.cursor()
+
+create_table = """
+CREATE TABLE IF NOT EXISTS Produtos (
+  id INTEGER PRIMARY KEY,
+  nome TEXT NOT NULL,
+  preco REAL NOT NULL,
+  estoque INTERGER)
+"""
+
+cursor.execute(create_table)
+conn.commit()
+conn.close()
+print("Tabela 'produtos' criada com sucesso")
+
+# Adicionar produto
+conn = sqlite3.connect('minhaloja.db')
+cursor = conn.cursor()
+
+novo_produto = ('Camiseta', 19.99, 50)
+inserir_produto = "INSERT INTO Produtos (nome, preco, estoque) VALUES (?, ?, ?)"
+
+cursor.execute(inserir_produto, novo_produto)
+conn.commit()
+conn.close()
+print("Produto adicionado com sucesso")
+
+#READ
+conn = sqlite3.connect('minhaloja.db')
+cursor = conn.cursor()
+
+cursor.execute("SELECT * FROM Produtos")
+produtos = cursor.fetchall()
+
+for produto in produtos:
+    print(produto)
+
+conn.close()
+
+
+# UPDATE - atualizando produto com id = 1
+conn = sqlite3.connect('minhaloja.db')
+cursor = conn.cursor()
+
+novo_preco = 37.99
+produto_id = 2
+
+cursor.execute(
+    "UPDATE Produtos SET preco = ? WHERE id = ?",
+    (novo_preco, produto_id)
+)
+conn.commit()
+conn.close()
+print("\nPreço do produto atualizado com sucesso")
+
+# DELETE - Excluindo produto com id = 2
+conn = sqlite3.connect('minhaloja.db')
+cursor = conn.cursor()
+
+produto_id = 2
+
+cursor.execute(
+    "DELETE FROM Produtos WHERE id = ?",
+    (produto_id,)
+)
+conn.commit()
+conn.close()
+print("\nProduto excluído com sucesso")

@@ -1,0 +1,51 @@
+class veiculo:
+    def __init__ (self, marca, modelo, ano):
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+        self.velocidade = 0 # Todo veículo começa parado
+
+    def acelerar (self, incremento):
+      self.velocidade += incremento
+
+    def frear (self, decremento):
+      self.velocidade -= decremento
+
+    def status (self):
+        return (f"Marca: {self.marca}, Modelo: {self.modelo}, "
+                f"Ano: {self.ano}, Velocidade: {self.velocidade} km/h")
+
+# Classes-filhas --> Carro e Bicicleta
+class carro(veiculo):
+    def __init__ (self, marca, modelo, ano, potencia):
+        # "super" chama o construtor da classe-pai
+        super().__init__(marca, modelo, ano)
+        self.potencia = potencia
+
+# Sobrescrevendo o método acelerar
+    def  acelerar(self, incremento):
+        self.velocidade += incremento + self.potencia
+
+class bicicleta(veiculo):
+    def __init__ (self, marca, modelo, ano, tipo):
+        super().__init__(marca, modelo, ano)
+        self.tipo = tipo
+
+# Sobrescrevendo o status para inlcuir o tipo
+    def status(self):
+        return (f"Marca: {self.marca}, Modelo: {self.modelo}, "
+                f"Ano: {self.ano}, Tipo: {self.tipo}, "
+                f"Velocidade: {self.velocidade} kh/h")
+
+# Criando os objetos
+carro1 = carro("VW", "Gol" , 2020, 150)
+bicicleta1 = bicicleta("Trek", "Mountain Bike", 2026, "MTB")
+
+carro1.acelerar(50)
+bicicleta1.acelerar(20)
+
+# Exibindo o status dos veículos
+print("Status do carro: ")
+print(carro1.status())
+print("\nStatus da bicicleta: ")
+print(bicicleta1.status())

@@ -1,0 +1,4 @@
+linguagens = ['PYTHON', 'JAVA','JAVASCRIPT','C','C#','C++','SWIFT','GO']
+print('Antes da listcomp =', linguagens)
+linguagens = [item.lower() for item in linguagens]
+print('\nDepois da listcomp = ', linguagens)
