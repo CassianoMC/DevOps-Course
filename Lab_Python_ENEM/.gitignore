@@ -1,0 +1,15 @@
+# Ambiente Virtual
+venv/
+.venv/
+
+# Dados Brutos e Banco de Dados Local
+*.db
+*.csv
+data/raw/MICRODADOS_ENEM_2023.csv
+
+# Caches do Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
